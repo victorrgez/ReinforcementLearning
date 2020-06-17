@@ -27,6 +27,9 @@ The second one is based on subtle changes of direction, which in the long term w
 
 ![CartPoleTactic2](cartPole/tactics/CartPoleTactic2.gif)
 
+You can test the two tactics by yourself with the following script. You need to have installed OpenAIGym (https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30?gi=cdb9345d454c) and the weights (available in the cartPole folder) should be located in the same folder than the script:
+
+[Testing CartPole Weights](cartPole/cartPole0TestingCartPoleWeights.ipynb)
 
 ## 2. Lunar Lander
 TO BE ADDED....
