@@ -7,7 +7,7 @@
 - [ ] Learn how to implement the gradients for an Actor-Critic Model with Tensorflow
 - [ ] Solve Lunar Lander (Continuous) with Actor-Critic Model
 - [ ] Solve Bipedal Walker
-- [ ] Solved Bipedal Walker Hardcore
+- [ ] Solve Bipedal Walker Hardcore
 - [ ] \(Optional) Solve Atari Breakout. It would probably take more than a week computing each training loop...
 
 ## 1. Cart Pole
