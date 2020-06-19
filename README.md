@@ -3,11 +3,11 @@
 - [X] Solve CartPole with a Single Network
 - [X] Solve CartPole with a Single Network using Memory Replay
 - [X] Solve CartPole with a Double Network (An Online Model plus a Target Network) to stabilise the algorithm
-- [ ] Solve Lunar Lander with discrete Action Space
-- [ ] Solve Lunar Lander with continuous Action Space
+- [X] Solve Lunar Lander (Discrete)
+- [ ] Learn how to implement the gradients for an Actor-Critic Model with Tensorflow
+- [ ] Solve Lunar Lander (Continuous) with Actor-Critic Model
 - [ ] Solve Bipedal Walker
-- [ ] Solved Bipedal Waker Hardcore
-- [ ] Implement Action Critic Algorithm ?
+- [ ] Solved Bipedal Walker Hardcore
 - [ ] \(Optional) Solve Atari Breakout. It would probably take more than a week computing each training loop...
 
 ## 1. Cart Pole
@@ -32,4 +32,4 @@ You can test the two tactics by yourself with the following script. You need to 
 [Testing CartPole Weights](cartPole/cartPole0TestingCartPoleWeights.ipynb)
 
 ## 2. Lunar Lander
-TO BE ADDED....
+(WORKING ON IT)....
