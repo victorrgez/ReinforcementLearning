@@ -27,7 +27,7 @@ The second one is based on subtle changes of direction, which in the long term w
 
 ![CartPoleTactic2](cartPole/tactics/CartPoleTactic2.gif)
 
-You can test these two tactics by yourself with the following script. You need to have installed OpenAIGym (https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30?gi=cdb9345d454c). The weights file (available in the cartPole folder) should be located in the same folder than the following testing script:
+You can test these two tactics by yourself with the following script. You need to have installed OpenAIGym (https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30?gi=cdb9345d454c). The weights file (available in the cartPole/tactics folder) should be located in the same folder than the following testing script:
 
 [Testing CartPole Weights](cartPole/cartPole0TestingCartPoleWeights.ipynb)
 
@@ -37,6 +37,8 @@ Agent with no training:
 ![OnlyAction3](lunarLander/tactics/1AgentOnlyAction3.gif)
 
 There are two version of this environment: Discrete and Continuous. Links to scripts:
+
+[Discrete](lunarLander/lunarLander2Discrete.ipynb), [Continuous](lunarLander/lunarLander3Continuous.ipynb)
 
 In the discrete one, the agent can choose between doing nothing, firing main engine, firing left engine and firing right engine. In the continuous one, the action space comprises two float values which indicate the power in the main engine (from -1 to 0 means powered off) and the relation between left and right engine power (values close to -1: left, values close to 1: right).
 
@@ -49,6 +51,10 @@ It's only after hundreds of episodes of exploration that it learns that sometime
 ![TrainedAgent](lunarLander/tactics/3AgentHasLearnt.gif)
 
 As with other RL environments, these learning algorithms can be unstable when certain past-experiences dissapear from the memory array. When catastrophic learning happens in Lunar Lander, the agent stops remembering that landing with a great speed or a bad angle results in a -100 points penalisation. For this reason, it is adviced to do regular checkpoints of the agent weights to recover the best version of the agent obtained during the learning curve.
+
+For testing the trained weights, The weights file (available in the lunarLander/tactics folder) should be located in the same folder than the following testing scripts:
+
+[Testing Discrete](lunarLander/lunarLander0TestingDiscrete.ipynb), [Testing Continuous](lunarLander/lunarLander1TestingContinuous.ipynb)
 
 ## 3. Bipedal Walker
 
