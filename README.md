@@ -15,7 +15,7 @@
 - [X] Try again Bipedal Walker with the Genetic Algorithm. Gets a better performance although it is not optimal
 - [X] Try Augmented Random Search for solving Bipedal Walker. The results are worse than with genetic algorithm
 
-- [ ] \(Optional) Solve Atari Breakout. It would probably take more than a week computing each training loop...
+- [ ] \(Optional) Solve an Atari Environment from screen pixels. It would probably take more than a week on a CPU for each hyperparameter configuration...
 
 ## 1. Cart Pole
 Random Agent with no training:
