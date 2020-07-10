@@ -64,7 +64,7 @@ For testing the trained weights, the weights file (available in the lunarLander/
 [Testing Lunar Lander Discrete](lunarLander/lunarLander0TestingDiscrete.ipynb), [Testing Lunar Lander Continuous](lunarLander/lunarLander1TestingContinuous.ipynb)
 
 
-## 3. Coding my Own Environment (SNAKE)
+## 3. Coding a CUSTOM Environment (SNAKE)
 
 The Snake game was coded from scratch in order to obtain a flexible environment. In this section, different kinds of inputs and outputs for the Neural Network were tried such as passing the board of the game or the pixels obtained after rendering the board with Matplotlib. Both versions of the snake game were tested: with an Open Area in which the snake can go outside the borders and appear in the opposite side of the screen; and with a wall that kills the snake if it tries to go out. Using an Open Area made it more difficult to implement snake sensors and there were more situations in which the snake would fall into a loop in the initial training episodes:
 
