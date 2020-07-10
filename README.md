@@ -138,7 +138,7 @@ Augmented Random Search is an algorithm which explores by adding random noise to
 
 ## 6. Extra environments.
 
-Some additional environments might be added in this section. However, they will not have fully-trained agents given that most of these complex challenges would mean days or even weeks running in order to try each hyperameter configuration on a CPU.
+Some additional environments might be added in this section. However, they will not have fully-trained agents given that most of these complex challenges would mean days or even weeks running in order to try each hyperparameter configuration on a CPU.
 
 Pong (from ram). The input consists of 128 bytes and the output is discrete: Up or Down.
 
