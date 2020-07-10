@@ -144,7 +144,7 @@ Pong (from ram). The input consists of 128 bytes and the output is discrete: Up 
 
 [Genetic Algorithm Pong](pong/Pong.ipynb)
 
-Random agent on the left, agent selected by Genetic Algorithm on the right (computer:orange, agent:green):
+Random agent on the left, agent selected by Genetic Algorithm on the right (computer : orange, agent : green):
 
 ![randomPong](pong/tactics/randomPong.gif)
 ![learnedPong](pong/tactics/learnedPong.gif)
