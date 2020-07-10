@@ -57,7 +57,7 @@ It's only after hundreds of episodes of exploration that it learns that sometime
 
 ![TrainedAgent](lunarLander/tactics/3AgentHasLearnt.gif)
 
-As with other RL environments, these learning algorithms can be unstable when certain past-experiences dissapear from the memory array. When catastrophic learning happens in Lunar Lander, the agent stops remembering that landing with a great speed or a bad angle results in a -100 points penalisation. For this reason, it is adviced to do regular checkpoints of the agent weights to recover the best version of the agent obtained during the learning curve.
+As with other RL environments, these learning algorithms can be unstable when certain past-experiences dissapear from the memory array. When catastrophic learning happens in Lunar Lander, the agent stops remembering that landing with a great speed or a bad angle results in a -100 points penalisation. For this reason, it is advised to do regular checkpoints of the agent weights to recover the best version of the agent obtained during the learning curve.
 
 For testing the trained weights, the weights file (available in the lunarLander/tactics folder) should be located in the same folder than the following testing scripts:
 
@@ -138,7 +138,7 @@ Augmented Random Search is an algorithm which explores by adding random noise to
 
 ## 6. Extra environments.
 
-I might add some extra environments here but without fully trained agents given that most of these complex challenges would take days or even weeks to try each hyperameters configuration on my CPU.
+Some additional environments might be added in this section. However, they will not have fully-trained agents given that most of these complex challenges would mean days or even weeks running in order to try each hyperameter configuration on a CPU.
 
 Pong (from ram). The input consists of 128 bytes and the output is discrete: Up or Down.
 
