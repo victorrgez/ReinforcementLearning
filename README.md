@@ -15,7 +15,7 @@
 - [X] Try again Bipedal Walker with the Genetic Algorithm. Gets a better performance although it is not optimal
 - [X] Try Augmented Random Search for solving Bipedal Walker. The results are worse than with genetic algorithm
 
-- [ ] \(Optional) Solve an Atari Environment from screen pixels. It would probably take more than a week on a CPU for each hyperparameter configuration...
+- [ ] \(Optional) Solve an Atari Environment from screen pixels. It would probably take more than a week on a CPU for each hyperparameter trial...
 
 ## 1. Cart Pole
 Random Agent with no training:
@@ -30,11 +30,11 @@ The agent has two different actions: Moving left (-1) and moving right (1). Cart
 
 ![CartPoleTactic1](cartPole/tactics/CartPoleTactic1.gif)
 
-The second one is based on subtle changes of direction, which in the long term would result in getting out of the screen. However, the limit of 500 steps per episode helps reduce the evolutive pression of the environment towards the tactic 1 given that normally the environment ends before the agents goes out of the screen (only around 10% of the times this happens before 500 steps):
+The second one is based on subtle changes of direction, which in the long term would result in getting out of the screen. However, the limit of 500 steps per episode helps reduce the evolutive pressure of the environment towards the tactic 1 given that normally the environment ends before the agents goes out of the screen (only around 10% of the times this happens before 500 steps):
 
 ![CartPoleTactic2](cartPole/tactics/CartPoleTactic2.gif)
 
-You can test these two tactics by yourself with the following script. You need to have installed OpenAIGym (https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30?gi=cdb9345d454c). The weights file (available in the cartPole/tactics folder) should be located in the same folder than the following testing script:
+You can test these two tactics by yourself with the following script. You need to install OpenAIGym (https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30?gi=cdb9345d454c). The weights file (available in the cartPole/tactics folder) should be located in the same folder than the following testing script:
 
 [Testing CartPole Weights](cartPole/cartPole0TestingCartPoleWeights.ipynb)
 
@@ -47,7 +47,7 @@ There are two version of this environment: Discrete and Continuous. Links to scr
 
 [Discrete](lunarLander/lunarLander2Discrete.ipynb), [Continuous](lunarLander/lunarLander3Continuous.ipynb)
 
-In the discrete one, the agent can choose between doing nothing, firing main engine, firing left engine and firing right engine. In the continuous one, the action space comprises two float values which indicate the power in the main engine (from -1 to 0 means powered off) and the relation between left and right engine power (values close to -1: left, values close to 1: right). The Actor-Critic algorithm was implemented to solve the continuous environment. The actor is a neural network that chooses for each state which output should be executed. The critic takes as input both the state and the action to be executed and grades it, judging how much reward the agent is gonna obtain in the future. Not only the critic network is trained with Q-learning, its gradient is also passed backwards to the actor so the weights are changed in the opposite direction (to maximise the grade to be obtained by the critic)
+In the discrete one, the agent can choose between doing nothing, firing main engine, firing left engine and firing right engine. In the continuous one, the action space comprises two float values which indicate the power in the main engine (from -1 to 0 means powered off) and the relation between left and right engine power (values close to -1: left, values close to 1: right). The Actor-Critic algorithm was implemented to solve the continuous environment. The actor is a neural network that chooses for each state which output should be executed. The critic takes as input both the state and the action to be executed and grades it, judging how much reward the agent is gonna obtain in the future. Not only the critic network is trained with Q-learning, its gradient is also passed backwards to the actor so the weights are changed in the opposite direction (to maximise instead of minimising the grade to be obtained by the critic)
 
 At first, the agent crashes quickly every time, so it needs to change its behaviour. After around 100 episodes, it learns to hover mid-air so it doesn't feel the -100 points penalisation for crashing:
 
@@ -64,19 +64,22 @@ For testing the trained weights, the weights file (available in the lunarLander/
 [Testing Discrete](lunarLander/lunarLander0TestingDiscrete.ipynb), [Testing Continuous](lunarLander/lunarLander1TestingContinuous.ipynb)
 
 
-NOT FINISHED FROM HERE ON!
----------------------------------------------------
-(Working on it):::::::::::::::
-
 ## 3. Coding my Own Environment (SNAKE)
 
-The Snake game was coded from scratch in order to obtain a flexible environment. In this section, different kinds of inputs and outputs for the Neural Network were tried such as passing the board of the game or the pixels obtained after rendering the board with Matplotlib. Both versions of the snake game were tested: with an Open Area in which the snake can go out the borders and appear in the opposite of the screen; and with a wall that kills the snake if it tries to go out.
+The Snake game was coded from scratch in order to obtain a flexible environment. In this section, different kinds of inputs and outputs for the Neural Network were tried such as passing the board of the game or the pixels obtained after rendering the board with Matplotlib. Both versions of the snake game were tested: with an Open Area in which the snake can go outside the borders and appear in the opposite side of the screen; and with a wall that kills the snake if it tries to go out. Using an Open Area made it more difficult to implement snake sensors and there were more situations in which the snake would fall into a loop in the initial training episodes:
 
-After many trials, it was decided to equip the Snake with sensors which would help the AI generalise to smaller and bigger boards. Therefore, the snake can see in eight directions for which it will know the proximity of a wall, an apple or a snake body part (the proximity is given as 1/distance), making a total of 24 input numbers. Furthermore, the snake is given a one-hot vector for the direction in which it is moving plus a smelling sense to know if the apple is South, North, East or West (for all those cases in which there is not a straigth line between the snake and the apple).
+![SnakeLoop](snake/tactics/loopSnake.gif)
+
+After many trials, it was decided to use a closed area and equip the Snake with sensors which would help the AI generalise to smaller and bigger boards. Therefore, the snake can see in eight directions for which it will know the proximity of a wall, an apple or a snake body part (the proximity is given as 1/distance), making a total of 24 input numbers. Furthermore, the snake is given a one-hot vector for the direction in which it is moving plus a smelling sense to know if the apple is South, North, East or West (for all those cases in which there is not a straigth line between the snake and the apple):
+
+![TrainedSnake](snake/tactics/trainedSnake.gif)
 
 Once the snake had been trained in a 9-by-9 board, it was moved to boards with different shapes in which it was tested (without further training). The AI proved to have excellent generalisation.
 
-The snake is not perfect, however; it could be improved in the future by adding extra sensors which would let the snake know how many body parts are in each direction (so far it can only know how close is the first one, and often gets confused once its length is one-third of the total squares in the board).
+![SmallerBoard](snake/tactics/smallSnake.gif)
+![DifferentBoard](snake/tactics/differentBoardSnake.gif)
+
+The snake is not perfect, however; it could be improved in the future by adding extra sensors which would let the snake know how many body parts are found in each direction (so far it can only know how close is the first one, and it often gets confused once its length is around one-third of the total squares of the board).
 
 ## 4. From Epsilon-Greedy exploration to noise-adding exploration strategies (Pendulum and Bipedal Walker)
 
