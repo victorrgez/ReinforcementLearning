@@ -24,7 +24,7 @@ Random Agent with no training:
 
 Links to scripts:
 
-[Single Network](cartPole/cartPole1SingleNetwork.ipynb), [Single Network with Memory Replay](cartPole/cartPole2WithExperienceReplaySaveBestWeights.ipynb), [Double Network](cartPole/cartPole3DoubleDQN.ipynb)
+[Cart Pole Single Network](cartPole/cartPole1SingleNetwork.ipynb), [Cart Pole Single Network with Memory Replay](cartPole/cartPole2WithExperienceReplaySaveBestWeights.ipynb), [Cart Pole Double Network](cartPole/cartPole3DoubleDQN.ipynb)
 
 The agent has two different actions: Moving left (-1) and moving right (1). Cart Pole was found to develop two strategies. The first one involves moving sharply to the opposite side, managing to mantain its position in the middle of the environment:
 
@@ -45,7 +45,7 @@ Agent with no training:
 
 There are two version of this environment: Discrete and Continuous. Links to scripts:
 
-[Discrete](lunarLander/lunarLander2Discrete.ipynb), [Continuous](lunarLander/lunarLander3Continuous.ipynb)
+[Lunar Lander Discrete](lunarLander/lunarLander2Discrete.ipynb), [Lunar Lander Continuous](lunarLander/lunarLander3Continuous.ipynb)
 
 In the discrete one, the agent can choose between doing nothing, firing main engine, firing left engine and firing right engine. In the continuous one, the action space comprises two float values which indicate the power in the main engine (from -1 to 0 means powered off) and the relation between left and right engine power (values close to -1: left, values close to 1: right). The Actor-Critic algorithm was implemented to solve the continuous environment. The actor is a neural network that chooses for each state which output should be executed. The critic takes as input both the state and the action to be executed and grades it, judging how much reward the agent is gonna obtain in the future. Not only the critic network is trained with Q-learning, its gradient is also passed backwards to the actor so the weights are changed in the opposite direction (to maximise instead of minimising the grade to be obtained by the critic)
 
@@ -61,7 +61,7 @@ As with other RL environments, these learning algorithms can be unstable when ce
 
 For testing the trained weights, the weights file (available in the lunarLander/tactics folder) should be located in the same folder than the following testing scripts:
 
-[Testing Discrete](lunarLander/lunarLander0TestingDiscrete.ipynb), [Testing Continuous](lunarLander/lunarLander1TestingContinuous.ipynb)
+[Testing Lunar Lander Discrete](lunarLander/lunarLander0TestingDiscrete.ipynb), [Testing Lunar Lander Continuous](lunarLander/lunarLander1TestingContinuous.ipynb)
 
 
 ## 3. Coding my Own Environment (SNAKE)
@@ -110,7 +110,7 @@ Genetic algorithms are an important branch of optimization algorithms, based on 
 
 This algorithm was able to find the minimum of the Beale function in seconds (only two parameters: X and Y). Afterwards, CartPole, was also solved in around 10 minutes. This is quite impressive when compared to the experiments with DQNs which would take hours to finish. Furthermore, when using a genetic algorithm, catastrophic forgetting is usually avoided as the Elitism Selection gets rid of those agents whose mutations result in lower scores.
 
-[Genetic CartPole](cartPole/cartPole4GeneticAlgorithm.ipynb),[Genetic Acrobot](acrobot/GeneticAcrobot.ipynb), [Testing Acrobot](acrobot/TestingAcrobot.ipynb)
+[Genetic CartPole](cartPole/cartPole4GeneticAlgorithm.ipynb), [Genetic Acrobot](acrobot/GeneticAcrobot.ipynb), [Testing Acrobot](acrobot/TestingAcrobot.ipynb)
 
 Following that, a new environment was solved: Acrobot. In this environment, the agent has to manage to get some part of its body above the line as fast as possible (random agent on the left, trained agent on the right):
 
@@ -144,7 +144,7 @@ Pong (from ram). The input consists of 128 bytes and the output is discrete: Up 
 
 [Genetic Algorithm Pong](pong/Pong.ipynb)
 
-Random agent on the left, geneticAlgorithm agent on the right (computer is orange and our agent is green):
+Random agent on the left, agent selected by Genetic Algorithm on the right (computer:orange, agent:green):
 
 ![randomPong](pong/tactics/randomPong.gif)
 ![learnedPong](pong/tactics/learnedPong.gif)
